@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   const help = `
   <pre>
-    Welcome to the Server Google Translate API!
+    Welcome to the Server Google Translate API froked by dirtydanee!
 
     The following endpoint is available:
 
@@ -30,7 +30,7 @@ app.post('/translate', (req, res) => {
 
   if (text && to) {
     translate(text, { from, to }).then(data => {
-      res.send({ 'text': data.text });
+      res.send({ 'response': data });
     }).catch(error => {
       console.error(error);
       res.status(500).send(error);
